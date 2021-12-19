@@ -8,10 +8,12 @@ import {Personne} from '../Model/Personne';
 })
 export class ItemComponent implements OnInit {
 
+
   constructor() {
   }
 
   @Input() personne: Personne;
+  @Input() size =50;
   @Output() envoyerToList = new EventEmitter();
 
 

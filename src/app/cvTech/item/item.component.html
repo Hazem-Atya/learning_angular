@@ -1,4 +1,15 @@
-<li class="list-group-item" (click)="declencherItemEvent()">
-  <img src="assets/images/{{personne.imagePath|defaultImage}}" class="item" alt="hazem">
+<div  (click)="declencherItemEvent()">
+  <img
+
+    src="assets/images/{{personne.imagePath|defaultImage}}"
+    class="rounded-circle" alt="hazem"
+    [ngStyle]="
+       {
+       width: size+'px',
+       height:size+'px',
+       display:'inline'
+       }
+
+">
   {{personne.firstName|titlecase}} {{personne.name|titlecase}}
-</li>
+</div>

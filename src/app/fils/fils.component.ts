@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {PremierService} from '../premier.service';
 
 @Component({
   selector: 'app-fils',
@@ -10,12 +9,11 @@ export class FilsComponent implements OnInit {
 
   @Output() envoyerRequest = new EventEmitter();
 
-  constructor(private premierService: PremierService) {
+  constructor() {
   }
 
   // méthode qui est déclenché directement aprés la création d'un composant
   ngOnInit(): void {
-    this.premierService.logger('Je suis le fils');
   }
 
   declencherEvenement() {

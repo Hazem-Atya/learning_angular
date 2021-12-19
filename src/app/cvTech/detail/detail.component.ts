@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Personne} from '../Model/Personne';
+import {EmbaucheService} from '../services/embauche.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-detail',
@@ -8,7 +10,10 @@ import {Personne} from '../Model/Personne';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private embaucheService: EmbaucheService,
+    private toastr: ToastrService
+  ) {
   }
 
   @Input() personne: Personne;
@@ -16,4 +21,12 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  embaucher() {
+    if (this.embaucheService.embaucher(this.personne)) {
+      this.toastr.success('Cv embauché avec succés');
+    } else {
+      this.toastr.warning("Cv déja embauché")
+    }
+
+  }
 }
