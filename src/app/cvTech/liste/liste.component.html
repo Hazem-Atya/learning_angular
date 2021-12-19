@@ -1,0 +1,5 @@
+<ol class="list-group" >
+  <app-item *ngFor="let personne of personnes" (envoyerToList)="declencherListeEvent($event)" [personne]="personne"></app-item>
+ <!-- <app-item (envoyerToList)="declencherListeEvent($event)" [personne]="personnes[1]"></app-item>
+  <app-item (envoyerToList)="declencherListeEvent($event)" [personne]="personnes[2]"></app-item>-->
+</ol>

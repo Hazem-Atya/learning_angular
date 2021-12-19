@@ -1,0 +1,44 @@
+
+
+<div>
+  {{myInfo|json}}
+</div>
+
+<br><br>
+<ol class="list-group">
+  <li class="list-group-item" *ngFor="let team of teams;
+                             let ind=index; let first=last ">
+   {{team|titlecase}}
+  </li>
+</ol>
+
+
+
+<ol class="list-group">
+  <li class="list-group-item" *ngFor="let team of myInfo | keyvalue;let ind=index">
+    {{ind}}    {{team.key}} {{team.value}}
+  </li>
+</ol>
+
+<br>
+<br>
+<p [ngClass]="{
+    'est':est,
+ 'barca':barca,
+ 'milan':milan
+}"
+>class works!</p>
+<button (click)="mkache5()" class="btn btn-info">Esperance</button>
+<br><br>
+
+
+<div appHighlight>
+  Bonjour je teste ma directive highlight
+</div>
+<br><br>
+
+<input appRainbow type="text" class="form-control">
+
+<div *ngIf="show">
+  Bonjour je teste la directive ngif
+</div>
