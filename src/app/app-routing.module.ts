@@ -9,9 +9,11 @@ import {ColorComponent} from './components/color/color.component';
 import {FrontComponent} from './components/front/front.component';
 import {ParentComponent} from './parent/parent.component';
 import {NotFound404Component} from './components/not-found404/not-found404.component';
+import {LoginComponent} from './components/login/login.component';
 
 const routes: Routes = [
   {path: '', component: FilsComponent},
+  {path: 'login', component: LoginComponent},
   {
     path: 'cv',
     children:

@@ -25,6 +25,8 @@ import { BackComponent } from './components/back/back.component';
 import { FrontComponent } from './components/front/front.component';
 import { ColorComponent } from './components/color/color.component';
 import { NotFound404Component } from './components/not-found404/not-found404.component';
+import { LoginComponent } from './components/login/login.component';
+import { TestObservableComponent } from './components/test-observable/test-observable.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { NotFound404Component } from './components/not-found404/not-found404.com
     FrontComponent,
     ColorComponent,
     NotFound404Component,
+    LoginComponent,
+    TestObservableComponent,
 
 
   ],
