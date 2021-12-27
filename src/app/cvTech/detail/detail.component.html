@@ -1,4 +1,4 @@
-<div class="col-md-12x  col-sm-12">
+<div class="col-md-12x  col-sm-12" *ngIf="cv">
   <div class="card-container">
     <div class="card">
       <div class="front">
@@ -6,12 +6,12 @@
           <img src="assets/images/rotating_card_thumb2.png">
         </div>
         <div class="user">
-          <img class="img-circle" src="assets/images/{{personne.imagePath|defaultImage}}">
+          <img class="img-circle" src="assets/images/{{cv.imagePath|defaultImage}}">
         </div>
         <div class="content">
           <div class="main">
-            <h3 class="name">{{personne.firstName}}  {{personne.name}}</h3>
-            <p class="profession">{{personne.job}}</p>
+            <h3 class="name">{{cv.firstName}}  {{cv.name}}</h3>
+            <p class="profession">{{cv.job}}</p>
             <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
           </div>
           <div class="footer">
@@ -25,7 +25,7 @@
         </div>
         <div class="content">
           <div class="main">
-            <h4 class="text-center">{{personne.age}}</h4>
+            <h4 class="text-center">{{cv.age}}</h4>
             <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
 
             <div class="stats-container">
@@ -56,7 +56,7 @@
            Embaucher
          </button>
 
-          <button [routerLink]="['/cv',personne.id]" class="btn btn-dark">
+          <button [routerLink]="['/cv',cv.id]" class="btn btn-dark">
             Détails
           </button>
         </div>

@@ -1,7 +1,7 @@
-<div  (click)="declencherItemEvent()">
+<div  (click)="selectCv()">
   <img
 
-    src="assets/images/{{personne.imagePath|defaultImage}}"
+    src="assets/images/{{cv.imagePath|defaultImage}}"
     class="rounded-circle" alt="hazem"
     [ngStyle]="
        {
@@ -11,5 +11,5 @@
        }
 
 ">
-  {{personne.firstName|titlecase}} {{personne.name|titlecase}}
+  {{cv.firstName|titlecase}} {{cv.name|titlecase}}
 </div>

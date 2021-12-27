@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Personne} from '../Model/Personne';
+import {Cv} from '../Model/Cv';
+import {CvService} from '../services/cv.service';
 
 @Component({
   selector: 'app-item',
@@ -9,18 +10,22 @@ import {Personne} from '../Model/Personne';
 export class ItemComponent implements OnInit {
 
 
-  constructor() {
+  constructor(
+    private cvService: CvService
+  ) {
   }
 
-  @Input() personne: Personne;
-  @Input() size =50;
-  @Output() envoyerToList = new EventEmitter();
+  @Input() cv: Cv;
+  @Input() size = 50;
+
+  // @Output() envoyerToList = new EventEmitter();
 
 
   ngOnInit(): void {
   }
 
-  declencherItemEvent() {
-    this.envoyerToList.emit(this.personne);
+  selectCv() {
+    this.cvService.selectItem(this.cv);
+    // this.envoyerToList.emit(this.personne);
   }
 }

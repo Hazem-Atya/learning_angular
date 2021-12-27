@@ -1,10 +1,14 @@
-<div >
+<div>
   <div class="row">
+
     <div class="col-md-6 col-sm-3">
-      <app-liste (envoyerToCv)="getClickedPersonne($event)" [personnes]="personnes"></app-liste>
+      <div class="alert alert-info">
+        Le nombre de clique est {{nbClick}}
+      </div>
+      <app-liste [personnes]="personnes"></app-liste>
     </div>
     <div class="col-md-6 col-sm-9">
-      <app-detail *ngIf="clickedPerson" [personne]="clickedPerson"></app-detail>
+      <app-detail></app-detail>
       <!--ngif = clicked personne c-à-d lorsqu'aucune personne n'est clické on affiche rien.-->
     </div>
 

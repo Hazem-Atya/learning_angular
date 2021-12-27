@@ -1,4 +1,4 @@
-export class Personne {
+export class Cv {
 
   id: number;
   name: string;

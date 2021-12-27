@@ -1,21 +1,21 @@
 import {Injectable} from '@angular/core';
-import {Personne} from '../Model/Personne';
+import {Cv} from '../Model/Cv';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmbaucheService {
 
-  private personnes: Personne[] = [];
+  private personnes: Cv[] = [];
 
   constructor() {
   }
 
-  getEmbauches(): Personne[] {
+  getEmbauches(): Cv[] {
     return this.personnes;
   }
 
-  embaucher(pers: Personne): boolean {
+  embaucher(pers: Cv): boolean {
     const index = this.personnes.indexOf(pers);
     if (index === -1) {
       this.personnes.push(pers);

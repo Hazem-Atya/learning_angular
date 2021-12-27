@@ -11,12 +11,12 @@ export class ListeComponent implements OnInit {
   }
 
   @Input() personnes;
-  @Output() envoyerToCv = new EventEmitter();
+  // @Output() envoyerToCv = new EventEmitter();
 
   ngOnInit(): void {
   }
 
   declencherListeEvent(msg: any) {
-    this.envoyerToCv.emit(msg);
+    // this.envoyerToCv.emit(msg);
     }
 }

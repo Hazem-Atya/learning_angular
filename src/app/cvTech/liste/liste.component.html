@@ -3,7 +3,7 @@
 
 
 
-<li *ngFor="let personne of personnes" class="list-group-item">     <app-item   (envoyerToList)="declencherListeEvent($event)" [personne]="personne"></app-item>
+<li *ngFor="let personne of personnes" class="list-group-item">     <app-item   [cv]="personne"></app-item>
 </li>
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Personne} from '../Model/Personne';
+import {Cv} from '../Model/Cv';
 import {EmbaucheService} from '../services/embauche.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {EmbaucheService} from '../services/embauche.service';
 })
 export class EmbaucheComponent implements OnInit {
 
-  personnesEmbauches:Personne[];
+  personnesEmbauches:Cv[];
   constructor(private embaucheService: EmbaucheService) { }
 
   ngOnInit(): void {

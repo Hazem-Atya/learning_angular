@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CvService} from '../services/cv.service';
-import {Personne} from '../Model/Personne';
+import {Cv} from '../Model/Cv';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 
@@ -11,7 +11,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class CvDetailPageComponent implements OnInit {
 
-  cv: Personne;
+  cv: Cv;
 
   constructor(private cvService: CvService,
               private activatedRoute: ActivatedRoute,
