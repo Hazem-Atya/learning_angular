@@ -22,25 +22,35 @@ export class CvDetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      const id = params['id'];
-      this.cv = this.cvService.getCvById(+id);
-    });
-    if (!this.cv) {
-      this.router.navigate(['/cv'],{queryParams:{'qpVar':'je suis un qp'}});
-    }
+        const id = params['id'];
+        this.cvService.getCvById(+id).subscribe(
+          (cv: Cv) => {
+            this.cv = cv;
+          }
+        );
+      },
+      () => {
+        if (!this.cv) {
+          this.router.navigate(['/cv'], {queryParams: {'qpVar': 'je suis un qp'}});
+        }
+      }
+    );
+
     this.activatedRoute.queryParams.subscribe((qp) => {
       console.log(qp);
     });
   }
 
   delete() {
-  if(this.cvService.deleteCv(this.cv))
-  {
-    this.router.navigate(['/cv']);
-    this.toastr.success('Cv supprimé avec succés');
-  }else{
-    this.toastr.error(`problème système. Merci de contacter l'admin`)
-  }
-
+    this.cvService.deleteCvById(this.cv.id).subscribe(
+      () => {
+        this.router.navigate(['/cv']);
+        this.toastr.success('Cv supprimé avec succés');
+      },
+      (erreur) => {
+        console.log(erreur);
+        this.toastr.error(`problème système. Merci de contacter l'admin`);
+      }
+    );
   }
 }

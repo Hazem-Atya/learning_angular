@@ -12,7 +12,7 @@ import {distinctUntilChanged} from 'rxjs/operators';
 export class CvComponent implements OnInit {
 
   nbClick: number = 0;
-  personnes: Cv[];
+  cvs: Cv[];
 
   // clickedPerson: Cv;
 
@@ -23,7 +23,13 @@ export class CvComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.personnes = this.cvService.getCv();
+    this.cvService.getCv().subscribe(
+      (cvs: Cv[]) => this.cvs = cvs,
+      () => {
+        this.cvs = this.cvService.getFakeCv();
+        this.toastr.warning('Data are fake, please contact the admin')
+      }
+    );
     this.toastr.info('Bienvenue dans notre cv tech :) ');
     this.cvService.selectCvSubject.pipe(distinctUntilChanged()).subscribe(
       (whoCares) => {

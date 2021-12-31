@@ -27,6 +27,10 @@ import { ColorComponent } from './components/color/color.component';
 import { NotFound404Component } from './components/not-found404/not-found404.component';
 import { LoginComponent } from './components/login/login.component';
 import { TestObservableComponent } from './components/test-observable/test-observable.component';
+import {HttpClientModule} from '@angular/common/http';
+import { AddCvComponent } from './cvTech/add-cv/add-cv.component';
+import {AuthService} from './auth/auth.service';
+import {AuthentificationInterceptorProvider} from './auth/interceptors/auth.interceptor';
 
 
 @NgModule({
@@ -53,6 +57,7 @@ import { TestObservableComponent } from './components/test-observable/test-obser
     NotFound404Component,
     LoginComponent,
     TestObservableComponent,
+    AddCvComponent,
 
 
   ],
@@ -61,9 +66,10 @@ import { TestObservableComponent } from './components/test-observable/test-obser
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthentificationInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {

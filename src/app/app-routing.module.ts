@@ -10,6 +10,8 @@ import {FrontComponent} from './components/front/front.component';
 import {ParentComponent} from './parent/parent.component';
 import {NotFound404Component} from './components/not-found404/not-found404.component';
 import {LoginComponent} from './components/login/login.component';
+import {AddCvComponent} from './cvTech/add-cv/add-cv.component';
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: FilsComponent},
@@ -19,6 +21,7 @@ const routes: Routes = [
     children:
       [
         {path: '', component: CvComponent},
+        {path: 'add', component: AddCvComponent,canActivate:[AuthGuard]},
         {path: ':id', component: CvDetailPageComponent},
       ]
   },
