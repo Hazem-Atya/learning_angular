@@ -10,4 +10,4 @@ The main topics covered by the workshops are:
 * Routing
 * Forms
 * Http and Deployment.
-This mini site is published at https://hazem-atya.github.io/Angular-workshops/
+This mini site is published at https://hazem-atya.github.io/learning_angular/
