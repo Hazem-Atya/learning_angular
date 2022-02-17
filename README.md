@@ -1,4 +1,4 @@
-# Learning angular
+# Angular Workshops
 
 This repository was created during our university Angular workshops.
 The main topics covered by the workshops are:
